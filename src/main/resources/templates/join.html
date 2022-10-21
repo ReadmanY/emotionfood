@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+</head>
+
+<body>
+    <h1>회원가입</h1>
+    <form action="signup.do" method="post" name="insertForm">
+        <div class="user_id">
+            <label><input type="text" id="user_id" size="30" autofocus placeholder="이메일을 입력하세요" required> </label>
+        </div>
+        <div class="user_pw">
+            <label><input type="password" id="user_pw" size="30" placeholder="비밀번호를 입력하세요" required> </label>
+        </div>
+        <div class="user_age">
+            <label for="age">연령대</label>
+            <select name="user_age" id="age">
+                <option value="10">10대</option>
+                <option value="20">20대</option>
+                <option value="30">30대</option>
+                <option value="40">40대</option>
+                <option value="50">50대</option>
+                <option value="60">60대 이상</option>
+            </select>
+        </div>
+        <div class="user_gender">
+            <input type="radio" name="gender" id="gendern" value="0">
+            <label for="gender">미선택</label>
+            <input type="radio" name="gender" id="genderm" value="1">
+            <label for="gender">남성</label>
+            <input type="radio" name="gender" id="genderf" value="2">
+            <label for="gender">여성</label>
+        </div>
+        <div>
+            <button type="submit">가입하기</button>
+            <button type="reset">초기화</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
