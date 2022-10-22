@@ -50,7 +50,7 @@ db
     -   [ ] FRONTEND
         -   [ ] Main Page
             -   [ ] Login
-            -   [ ] REGISTER
+            -   [ ] REGISTER -> join.html
         -   [ ] USER
             -   [ ] 사이트 소개는 모달로
             -   [ ] 감정분석식당추천 ( 사진 입력 )

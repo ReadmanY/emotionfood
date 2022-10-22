@@ -1,0 +1,24 @@
+common란
+ENUM 정보 입력
+    ex) 연령대
+    10: 10대
+    20: 20대
+    9: 관리자
+
+    ex) 성별
+    1: 남자
+    2: 여자
+    ...
+
+
+common
+    ㄴconfig(Config 파일 작성)
+        ㄴintercepter (Interceptor 파일 작성)
+
+config란
+설정파일
+    ex) interceptor에서 설정한 기능을 어느 웹페이지에 붙일지
+    Spring Security 설정 정의
+interceptor란
+전처리, 후처리
+    ex) 로그인을 안했을 시 특정 웹페이지에 들어가지 못하도록

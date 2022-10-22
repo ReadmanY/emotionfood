@@ -1,0 +1,32 @@
+controller에서 query 수행 요청시 필요한 기능
+
+controller 메소드 정의 
+    ㄴimpl  상세
+
+
+ex)
+controller
+public interface tmp_OrderService {
+    String updateOrderInfo(tmp_Order Order);
+}
+
+impl
+@Service
+public class tmp_OrderServiceImpl implements tmp_OrderService {
+    @Override
+    @Transactional
+    public String updateOrderInfo(tmp_Order tmp_Order) {
+        tmp_Order temp = tmp_OrderMapper.selectByPrimaryKey(tmp_Order.getOrderId());
+        // 비어 있지 않고 orderStatus>=0이면 출고되기 전에 상태를 수정할 수 있습니다.
+        if (temp != null && temp.getOrderStatus() >= 0 && temp.getOrderStatus() < 3) {
+            temp.setTotalPrice(tmp_Order.getTotalPrice());
+            temp.setUserAddress(tmp_Order.getUserAddress());
+            temp.setUpdateTime(new Date());
+            if (tmp_OrderMapper.updateByPrimaryKeySelective(temp) > 0) {
+                return ServiceResultEnum.SUCCESS.getResult();
+            }
+            return ServiceResultEnum.DB_ERROR.getResult();
+        }
+        return ServiceResultEnum.DATA_NOT_EXIST.getResult();
+    }
+}

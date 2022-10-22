@@ -1,0 +1,1 @@
+resource/mybatis_mapper에서 정의한 sql문을 java와 연결하기 위한 기능
