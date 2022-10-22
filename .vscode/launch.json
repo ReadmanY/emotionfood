@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EmofoodApplication<emo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.team.emofood.EmofoodApplication",
+            "projectName": "emo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
