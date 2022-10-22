@@ -25,6 +25,10 @@ db
 
 ## TO DO
 
+```
+완료된 파트 [ ] -> [X]
+```
+
 -   [ ] DATABASE
     -   [ ] DATA CRAWLING
     -   [ ] DATA FIX
