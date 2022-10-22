@@ -1,5 +1,5 @@
 # Created by https://www.toptal.com/developers/gitignore/api/maven,java,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=maven,java,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=maven,java
 
 ### Java ###
 # Compiled class file
@@ -40,20 +40,6 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
 # Local History for Visual Studio Code
 .history/
 
@@ -65,4 +51,38 @@ buildNumber.properties
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/maven,java,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/maven,java
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
