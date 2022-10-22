@@ -4,6 +4,16 @@
 
 ## 환경
 
+IDE
+
+-   jupyter notebook
+-   colab
+-   pycharm
+-   vscode
+
+language
+
+-   python3
 -   JavaSE-11
 
 db
@@ -33,14 +43,19 @@ db
         -   [ ] CONNECT WEB
 -   [ ] WEB
     -   [ ] FRONTEND
+        -   [ ] Main Page
+            -   [ ] Login
+            -   [ ] REGISTER
         -   [ ] USER
-            -   [ ] 기능 1
-            -   [ ] 기능 2
-            -   ...
+            -   [ ] 사이트 소개는 모달로
+            -   [ ] 감정분석식당추천 ( 사진 입력 )
+            -   [ ] 일반식당추천
+            -   [ ] 식당 선택 / 로그저장
+            -   [ ] MY PAGE
         -   [ ] ADMIN
-            -   [ ] 기능 1
-            -   [ ] 기능 2
-            -   ...
+            -   [ ] 유저 list
+            -   [ ] 식당 list
+            -   [ ] 전체 로그
     -   [ ] BACKEND
         -   [ ] CONNECT MYSQL
         -   [ ] CONNECT AI
