@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <!-- Main Sidebar Container -->
+    <aside th:fragment="sidebar-fragment(path)" class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a th:href="@{/admin/index}" class="brand-link">
+            <img src="/img/logo.webp" alt="Acorn Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
+            <span class="brand-text font-weight-light">Emotion food</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <p>
+                                대시보드
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a th:href="@{/admin/index}" th:class="${path}=='index'?'nav-link active':'nav-link'" class="nav-link">
+                                    <p>대시보드</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="http://namu.wiki/" th:class="${path}=='index'?'nav-link active':'nav-link'" class="nav-link">
+                                    <p>추천내역</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <p>
+                                데이터베이스 관리
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a th:href="@{/admin/restaurant" th:class="${path}=='restaurant-list'?'nav-link active':'nav-link'" class="nav-link">
+                                    <p>식당정보</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a th:href="@{/admin/user}" th:class="${path}=='user-list'?'nav-link active':'nav-link'" class="nav-link">
+                                    <p>사용자 목록</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a th:href="@{/admin/log}" th:class="${path}=='log-list'?'nav-link active':'nav-link'" class="nav-link">
+                                    <p>전체 내역</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <p>
+                                시스템
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a th:href="@{/admin/profile}" th:class="${path}=='profile'?'nav-link active':'nav-link'" class="nav-link">
+                                    <p>관리자 정보 변경</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a th:href="@{/admin/logout}" class="nav-link">
+                                    <p>로그아웃</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+</html>

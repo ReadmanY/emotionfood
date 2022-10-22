@@ -6,19 +6,20 @@
 
 IDE
 
--   jupyter notebook
--   colab
--   pycharm
--   vscode
+-   Jupyter Notebook
+-   Colab
+-   PyCharm
+-   Visual Studio Code
+-   Spring Tool Suite 4
 
 language
 
--   python3
+-   Python 3
 -   JavaSE-11
 
 db
 
--   mysql
+-   MySQL
     -   datasource.url=jdbc:mysql://localhost:3306/emofood
     -   datasource.username=food_user
     -   datasource.password=1234
