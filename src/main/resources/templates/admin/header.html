@@ -5,9 +5,14 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title th:text="${title}">관리자 페이지</title>
+        <!-- 웹 아이콘 라이브러리 -->
+        <!-- Font Awasome-->
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.2.0/css/fontawesome.min.css}" />
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.2.0/css/all.min.css}" />
+        <!-- /.웹 아이콘 라이브러리 -->
         <!-- css 라이브러리 -->
         <!-- Bootstrap -->
-        <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
         <!-- Bootstrap 기반의 Admin 사이트를 쉽게 개발하게 해주는 템플릿 -->
         <link rel="stylesheet" th:href="@{/webjars/AdminLTE/3.2.0/dist/css/adminlte.css}" />
         <!-- 웹 페이지 별 맞춤형 css -->
@@ -28,7 +33,7 @@
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a class="nav-link" th:href="@{/user}">
-                    <i class="fas fa-shopping-bag"> 홈페이지</i>
+                    <i class="fa-solid fa-utensils"> 홈페이지</i>
                 </a>
             </li>
         </ul>

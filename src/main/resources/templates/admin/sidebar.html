@@ -4,7 +4,7 @@
     <aside th:fragment="sidebar-fragment(path)" class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a th:href="@{/admin/index}" class="brand-link">
-            <img src="/img/logo.webp" alt="Acorn Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
+            <img src="/img/logo.webp" alt="Emo Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
             <span class="brand-text font-weight-light">Emotion food</span>
         </a>
 
@@ -45,17 +45,17 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a th:href="@{/admin/restaurant" th:class="${path}=='restaurant-list'?'nav-link active':'nav-link'" class="nav-link">
+                                <a th:href="@{/admin/restaurants}" th:class="${path}=='restaurant-list'?'nav-link active':'nav-link'" class="nav-link">
                                     <p>식당정보</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a th:href="@{/admin/user}" th:class="${path}=='user-list'?'nav-link active':'nav-link'" class="nav-link">
+                                <a th:href="@{/admin/users}" th:class="${path}=='user-list'?'nav-link active':'nav-link'" class="nav-link">
                                     <p>사용자 목록</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a th:href="@{/admin/log}" th:class="${path}=='log-list'?'nav-link active':'nav-link'" class="nav-link">
+                                <a th:href="@{/admin/logs}" th:class="${path}=='log-list'?'nav-link active':'nav-link'" class="nav-link">
                                     <p>전체 내역</p>
                                 </a>
                             </li>

@@ -83,6 +83,12 @@
 			<artifactId>AdminLTE</artifactId>
 			<version>3.2.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>font-awesome</artifactId>
+			<version>6.2.0</version>
+		</dependency>
 		<!-- /.Build tools from webjar -->
 
 		<dependency>
@@ -92,16 +98,16 @@
 		</dependency>
 
 		<!-- Security -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency>-->
 		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5 -->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
-			<version>3.0.4.RELEASE</version>
-		</dependency>
+			<version>3.1.0.M1</version>
+		</dependency>-->
 		<!-- /.Security -->
 
 	</dependencies>
