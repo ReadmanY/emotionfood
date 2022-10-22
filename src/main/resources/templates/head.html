@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head-fragment(title,path)">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title th:text="${title}">Head</title>
+        <!-- 웹 아이콘 라이브러리 -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.5.2/css/bootstrap.min.css}" />
+        <!-- 웹 페이지 별 맞춤형 css -->
+        <link rel="stylesheet" th:href="@{'/styles/'+${path}+'.css'}" />
+    </head>
+</html>

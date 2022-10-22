@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>
-</head>
-<body>
-    <nav class="menu">
-        <ol>
-            <li><a href="http://namu.wiki/">추천내역</a></li>
-            <li>식당정보</li>
-            <li>사용자목록</li>
-        </ol>
-    </nav>
-</body>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="mall/header::head-fragment('장바구니','cart')"> </head>
+    <body>
+        <nav class="menu">
+            <ol>
+                <li><a href="http://namu.wiki/">추천내역</a></li>
+                <li>식당정보</li>
+                <li>사용자목록</li>
+            </ol>
+        </nav>
+    </body>
 </html>
