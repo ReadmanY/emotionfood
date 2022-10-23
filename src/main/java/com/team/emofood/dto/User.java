@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 public class User {
-	private String uEmail;	// Email
+	private String uemail;	// Email
 	private String uname;	// 이름
 	private String upw;	// 비번
 	private int uage;	// 연령대 (연령대 = 9이면 admin 계정)
