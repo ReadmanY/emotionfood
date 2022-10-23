@@ -254,17 +254,14 @@
           LIMIT #{start},#{limit}
         </if>
   </select>
-	
-	<!-- 로그인 -->
-    <select id="getUserAccount" resultType="com.team.emofood.controller.vo.User">
-        SELECT * FROM user
-        WHERE uemail= #{uemail}
-    </select>
 
-    <!-- 회원가입 -->
-    <insert id="saveUser" parameterType="com.team.emofood.controller.vo.User">
-        INSERT INTO user
-        (uemail, uname, upw, ugend, uage, ujoindate)
-        VALUES(#{uemail},#{uname},#{upw},#{ugend},#{uage},#{ujoindate});
-    </insert>
+  <select id="getTotalUser" parameterType="Map" resultType="int">
+    SELECT count(*) FROM user
+    WHERE 1=1
+      <if test="uemail!=null and uemail!=''">
+        AND uemail = #{uemail}
+      </if>
+  </select>
+	
+
 </mapper>
