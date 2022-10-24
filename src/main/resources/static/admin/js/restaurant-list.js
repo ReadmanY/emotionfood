@@ -3,12 +3,19 @@ $(function () {
         url: "/admin/restaurants/list",
         datatype: "json",
         colModel: [
-            { label: "id", name: "eid", index: "eid", width: 60, key: true },
-            { label: "time", name: "etime", index: "etime", width: 120 },
-            { label: "emotion", name: "eemote", index: "eemote", width: 120 },
-            { label: "locate_x", name: "elocate_x", index: "elocate_x", width: 120 },
-            { label: "locate_y", name: "elocate_y", index: "elocate_y", width: 120 },
-            { label: "email", name: "uemail", index: "uemail", width: 120 },
+            { label: "kid", name: "kid", index: "kid", width: 60 },
+            { label: "rid", name: "rid", index: "rid", width: 60 },
+            { label: "rname", name: "rname", index: "rname", width: 120 },
+            { label: "rcate", name: "rcate", index: "rcate", width: 120 },
+            { label: "raddr", name: "raddr", index: "raddr", width: 120 },
+            { label: "raddr_gu", name: "raddr_gu", index: "raddr_gu", width: 120 },
+            { label: "rphone", name: "rphone", index: "rphone", width: 120 },
+            { label: "rlocate_x", name: "rlocate_x", index: "rlocate_x", width: 120 },
+            { label: "rlocate_y", name: "rlocate_y", index: "rlocate_y", width: 120 },
+            { label: "krate", name: "krate", index: "krate", width: 120 },
+            { label: "kcount_rate", name: "kcount_rate", index: "kcount_rate", width: 120 },
+            { label: "kcount_blog", name: "kcount_blog", index: "kcount_blog", width: 120 },
+            { label: "kkeyword", name: "kkeyword", index: "kkeyword", width: 120 },
         ],
         height: 760,
         rowNum: 20,
@@ -51,4 +58,57 @@ function reload() {
             page: page,
         })
         .trigger("reloadGrid");
+}
+
+function detailRestaurant() {
+    var id = getSelectedRow();
+    if (id == null) {
+        return;
+    }
+    window.location.href = "/admin/restaurants/info/" + id;
+}
+
+function editRestaurant() {
+    var id = getSelectedRow();
+    if (id == null) {
+        return;
+    }
+    window.location.href = "/admin/restaurants/edit/" + id;
+}
+
+function deleteRestaurant() {
+    var id = getSelectedRows();
+    if (id == null) {
+        return;
+    }
+    Swal.fire({
+        title: "사용자 삭제",
+        text: "사용자를 정말 삭제하시겠습니까?",
+        icon: "warning",
+        showDenyButton: true,
+        confirmButtonText: "Yes",
+        denyButtonText: "No",
+        dangerMode: true,
+    }).then((flag) => {
+        if (flag.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: "/admin/restaurants/delete",
+                contentType: "application/json",
+                data: JSON.stringify(id),
+                success: function (r) {
+                    if (r.resultCode == 200) {
+                        Swal.fire("삭제성공", {
+                            icon: "success",
+                        });
+                        $("#jqGrid").trigger("reloadGrid");
+                    } else {
+                        Swal.fire(r.message, {
+                            icon: "error",
+                        });
+                    }
+                },
+            });
+        }
+    });
 }

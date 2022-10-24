@@ -91,6 +91,7 @@ public class UserServiceImpl implements UserService  {
             BeanUtil.copyProperties(user, tmpUser);
             if(tmpUser.getUage()==9){
                 httpSession.setAttribute(Constants.ADMIN_SESSION_KEY, tmpUser);
+                httpSession.setMaxInactiveInterval(60 * 60 * 2);
             }
             httpSession.setAttribute(Constants.USER_SESSION_KEY, tmpUser);
             // session 만료 시간을 2시간으로 설정

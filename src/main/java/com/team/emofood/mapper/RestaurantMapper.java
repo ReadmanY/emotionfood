@@ -1,12 +1,13 @@
 package com.team.emofood.mapper;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 import com.team.emofood.dto.Restaurant;
 import com.team.emofood.dto.RestaurantExample;
 import com.team.emofood.util.PageQueryUtil;
-
-import java.util.List;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface RestaurantMapper {
@@ -98,6 +99,8 @@ public interface RestaurantMapper {
      */
     int updateByPrimaryKey(Restaurant row);
 
-    List<Restaurant> findRestaurantList(PageQueryUtil pageUtil);
-    int getTotalRestaurant(PageQueryUtil pageUtil);
+    List<Restaurant> findKakaoInfoRestaurantList(PageQueryUtil pageUtil);
+    int getTotalKakaoInfoRestaurant(PageQueryUtil pageUtil);
+     // 일괄삭제
+     int deleteBatch(Long[] ids);
 }
