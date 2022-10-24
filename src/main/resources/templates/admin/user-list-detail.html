@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <!-- 사용자목록 -->
+    <head th:replace="admin/header::head-fragment('사용자 상세','user-list')"> </head>
+    <body>
+        <div class="wrapper">
+            <!-- Main Header Component -->
+            <div th:replace="admin/header::header-nav"></div>
+            <!-- Main Sidebar Component -->
+            <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header Component -->
+                <div class="content-header">
+                    <!-- container-fluid -->
+                    <div class="container-fluid">
+                        <div class="card card-primary card-outline">
+                            <!-- Header -->
+                            <div class="card-header">
+                                <h3 class="card-title">회원 정보 상세</h3>
+                            </div>
+                            <!-- /.Header -->
+                            <div class="card-body">
+                                <div class="grid-btn m-2">
+                                    <button class="btn btn-info" th:onclick="'location.href=\'' + @{/admin/users} + '\''"><i class="fa-solid fa-arrow-left"></i> 사용자 목록</button>
+                                </div>
+                                <div>
+                                    <p class="card-text">email: <span th:text="${user.uemail}"></span></p>
+                                    <p class="card-text">name: <span th:text="${user.uname}"></span></p>
+                                    <p class="card-text">password: <span th:text="${user.upw}"></span></p>
+
+                                    <p class="card-text">
+                                        gender: <span th:if="${user.ugend}=='0'">미선택</span>
+                                        <span th:if="${user.ugend}=='1'">남성</span>
+                                        <span th:if="${user.ugend}=='2'">여성</span>
+                                    </p>
+
+                                    <th:block th:if="${user.uage}=='9'">
+                                        <p class="card-text">role: 관리자</p>
+                                    </th:block>
+                                    <th:block th:unless="${user.uage}=='9'">
+                                        <p class="card-text">age: <span th:text="${user.uage}"></span>대</p>
+                                    </th:block>
+                                    <p class="card-text">join date: <span th:text="${user.ujoindate}"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /.Content Header Component -->
+            </div>
+            <!-- /.Content Wrapper -->
+            <!-- footer-fragment -->
+            <div th:replace="admin/footer::footer-fragment"></div>
+        </div>
+
+        <!-- js 라이브러리 -->
+        <!-- jQuery -->
+        <script th:src="@{/webjars/jquery/3.6.1/jquery.min.js}"></script>
+        <!-- Bootstrap -->
+        <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+        <!-- AdminLTE App -->
+        <script th:src="@{/webjars/AdminLTE/3.2.0/dist/js/adminlte.min.js}"></script>
+        <!-- Fontawesome -->
+        <script th:src="@{/webjars/font-awesome/6.2.0/js/fontawesome.min.js}"></script>
+        <!-- sweetalert -->
+        <script th:src="@{/webjars/sweetalert2/11.4.24/dist/sweetalert2.min.js}"></script>
+
+        <script th:src="@{/admin/js/public.js}"></script>
+        <script th:src="@{/admin/js/user-list-detail.js}"></script>
+    </body>
+</html>

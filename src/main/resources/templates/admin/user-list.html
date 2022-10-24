@@ -26,12 +26,12 @@
                             </div>
                             <!-- card-body -->
                             <div class="card-body">
-                                <div class="grid-btn">
+                                <div class="grid-btn m-2">
                                     <button class="btn btn-info" onclick="detailUser()"><i class="fa-solid fa-info"></i> 사용자 상세</button>
                                     <button class="btn btn-info" onclick="editUser()"><i class="fa-solid fa-pen-to-square"></i> 사용자 수정</button>
                                     <button class="btn btn-info" onclick="deleteUser()"><i class="fa-solid fa-trash-can"></i> 사용자 제거</button>
                                 </div>
-                                <table id="jqGrid" class="table table-bordered"></table>
+                                <table id="jqGrid" class="table table-busered"></table>
                                 <div id="jqGridPager"></div>
                             </div>
                             <!-- /.card-body -->
@@ -57,6 +57,7 @@
         <script th:src="@{/webjars/jqGrid/5.7.0/js/i18n/grid.locale-kr.js}"></script>
         <!-- sweetalert -->
         <script th:src="@{/webjars/sweetalert2/11.4.24/dist/sweetalert2.min.js}"></script>
+
         <script th:src="@{/admin/js/public.js}"></script>
         <script th:src="@{/admin/js/user-list.js}"></script>
     </body>

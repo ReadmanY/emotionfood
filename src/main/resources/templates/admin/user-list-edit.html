@@ -3,36 +3,97 @@
     <!-- 사용자목록 -->
     <head th:replace="admin/header::head-fragment('사용자목록','user-list')"> </head>
     <body>
-        <form action="edit.do" method="post" name="insertForm">
-            <div class="user_id">
-                <label><input type="text" id="user_id" size="30" autofocus placeholder="이메일을 입력하세요" required /> </label>
+        <div class="wrapper">
+            <!-- Main Header Component -->
+            <div th:replace="admin/header::header-nav"></div>
+            <!-- Main Sidebar Component -->
+            <div th:replace="admin/sidebar::sidebar-fragment(${path})"></div>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header Component -->
+                <div class="content-header">
+                    <!-- container-fluid -->
+                    <div class="container-fluid">
+                        <div class="card card-primary card-outline">
+                            <!-- Header -->
+                            <div class="card-header">
+                                <h3 class="card-title">회원 정보 수정</h3>
+                            </div>
+                            <!-- /.Header -->
+                            <div class="card-body">
+                                <form role="form" name="insertForm">
+                                    <div class="user_id form-group">
+                                        <label><input type="text" id="user_id" size="30" autofocus placeholder="이메일을 입력하세요" required disabled readonly th:value="${user.uemail}" /> </label>
+                                    </div>
+                                    <div class="user_name form-group">
+                                        <label><input type="text" id="user_name" size="30" placeholder="이름을 입력하세요" required th:value="${user.uname}" /> </label>
+                                    </div>
+                                    <div class="user_pw form-group">
+                                        <label><input type="password" id="user_pw" size="30" placeholder="비밀번호를 입력하세요" required th:value="${user.upw}" /> </label>
+                                    </div>
+                                    <!-- 관리자 -->
+                                    <th:block th:if="${user.uage}=='9'">
+                                        <div class="user_age d-none">
+                                            <label><input type="hidden" id="user_age" required th:value="${user.uage}" /> </label>
+                                        </div>
+                                        <div class="user_gender d-none">
+                                            <input type="radio" name="user_gender" id="manager" checked value="0" />
+                                        </div>
+                                    </th:block>
+                                    <!-- /.관리자 -->
+                                    <!-- 일반 사용자 -->
+                                    <th:block th:unless="${user.uage}=='9'">
+                                        <div class="user_age form-group">
+                                            <label for="age">연령대</label>
+                                            <select name="user_age" id="user_age" th:value="${user.uage}">
+                                                <option th:selected="${user.uage}=='10'" value="10">10대</option>
+                                                <option th:selected="${user.uage}=='20'" value="20">20대</option>
+                                                <option th:selected="${user.uage}=='30'" value="30">30대</option>
+                                                <option th:selected="${user.uage}=='40'" value="40">40대</option>
+                                                <option th:selected="${user.uage}=='50'" value="50">50대</option>
+                                                <option th:selected="${user.uage}=='60'" value="60">60대 이상</option>
+                                            </select>
+                                        </div>
+                                        <div class="user_gender form-group">
+                                            <input type="radio" name="user_gender" id="gendern" th:checked="${user.ugend}=='0'" value="0" />
+                                            <label for="gender">미선택</label>
+                                            <input type="radio" name="user_gender" id="genderm" th:checked="${user.ugend}=='1'" value="1" />
+                                            <label for="gender">남성</label>
+                                            <input type="radio" name="user_gender" id="genderf" th:checked="${user.ugend}=='2'" value="2" />
+                                            <label for="gender">여성</label>
+                                        </div>
+                                    </th:block>
+                                    <!-- /.일반 사용자 -->
+                                </form>
+                                <div>
+                                    <button class="btn btn-info" onclick="submit()"><i class="fa-solid fa-check"></i> 수정하기</button>
+                                    <button class="btn btn-info" onclick="cancel()"><i class="fa-solid fa-xmark"></i> 취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /.Content Header Component -->
             </div>
-            <div class="user_pw">
-                <label><input type="password" id="user_pw" size="30" placeholder="비밀번호를 입력하세요" required /> </label>
-            </div>
-            <div class="user_age">
-                <label for="age">연령대</label>
-                <select name="user_age" id="age">
-                    <option value="10">10대</option>
-                    <option value="20">20대</option>
-                    <option value="30">30대</option>
-                    <option value="40">40대</option>
-                    <option value="50">50대</option>
-                    <option value="60">60대 이상</option>
-                </select>
-            </div>
-            <div class="user_gender">
-                <input type="radio" name="gender" id="gendern" value="0" />
-                <label for="gender">미선택</label>
-                <input type="radio" name="gender" id="genderm" value="1" />
-                <label for="gender">남성</label>
-                <input type="radio" name="gender" id="genderf" value="2" />
-                <label for="gender">여성</label>
-            </div>
-            <div>
-                <button type="submit">수정하기</button>
-                <button type="reset">초기화</button>
-            </div>
-        </form>
+            <!-- /.Content Wrapper -->
+            <!-- footer-fragment -->
+            <div th:replace="admin/footer::footer-fragment"></div>
+        </div>
+
+        <!-- js 라이브러리 -->
+        <!-- jQuery -->
+        <script th:src="@{/webjars/jquery/3.6.1/jquery.min.js}"></script>
+        <!-- Bootstrap -->
+        <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+        <!-- AdminLTE App -->
+        <script th:src="@{/webjars/AdminLTE/3.2.0/dist/js/adminlte.min.js}"></script>
+        <!-- Fontawesome -->
+        <script th:src="@{/webjars/font-awesome/6.2.0/js/fontawesome.min.js}"></script>
+        <!-- sweetalert -->
+        <script th:src="@{/webjars/sweetalert2/11.4.24/dist/sweetalert2.min.js}"></script>
+
+        <script th:src="@{/admin/js/public.js}"></script>
+        <script th:src="@{/admin/js/user-list-edit.js}"></script>
     </body>
 </html>
