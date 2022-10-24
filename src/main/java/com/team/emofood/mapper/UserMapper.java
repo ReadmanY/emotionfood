@@ -104,4 +104,6 @@ public interface UserMapper {
 
     // 일괄삭제
     int deleteBatch(String[] ids);
+
+    User selectByloginEmailAndPasswd(@Param("uemail") String loginEmail, @Param("upw") String password);
 }

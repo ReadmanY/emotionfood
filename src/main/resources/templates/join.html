@@ -5,16 +5,19 @@
 
     <body>
         <h1>회원가입</h1>
-        <form action="signup.do" method="post" name="insertForm">
+        <form name="insertForm">
             <div class="user_id">
                 <label><input type="text" id="user_id" size="30" autofocus placeholder="이메일을 입력하세요" required /> </label>
+            </div>
+            <div class="user_name">
+                <label><input type="text" id="user_name" size="30" autofocus placeholder="이름을 입력하세요" required /> </label>
             </div>
             <div class="user_pw">
                 <label><input type="password" id="user_pw" size="30" placeholder="비밀번호를 입력하세요" required /> </label>
             </div>
             <div class="user_age">
-                <label for="age">연령대</label>
-                <select name="user_age" id="age">
+                <label for="user_age">연령대</label>
+                <select name="user_age" id="user_age">
                     <option value="10">10대</option>
                     <option value="20">20대</option>
                     <option value="30">30대</option>
@@ -24,17 +27,30 @@
                 </select>
             </div>
             <div class="user_gender">
-                <input type="radio" name="gender" id="gendern" value="0" />
-                <label for="gender">미선택</label>
-                <input type="radio" name="gender" id="genderm" value="1" />
-                <label for="gender">남성</label>
-                <input type="radio" name="gender" id="genderf" value="2" />
-                <label for="gender">여성</label>
+                <input type="radio" name="user_gender" id="gendern" value="0" />
+                <label for="user_gender">미선택</label>
+                <input type="radio" name="user_gender" id="genderm" value="1" />
+                <label for="user_gender">남성</label>
+                <input type="radio" name="user_gender" id="genderf" value="2" />
+                <label for="user_gender">여성</label>
             </div>
             <div>
-                <button type="submit">가입하기</button>
+                <button type="button" onclick="join()">가입하기</button>
                 <button type="reset">초기화</button>
             </div>
         </form>
+
+        <!-- js 라이브러리 -->
+        <!-- jQuery -->
+        <script th:src="@{/webjars/jquery/3.6.1/jquery.min.js}"></script>
+        <!-- Bootstrap -->
+        <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+        <!-- Fontawesome -->
+        <script th:src="@{/webjars/font-awesome/6.2.0/js/fontawesome.min.js}"></script>
+        <!-- sweetalert -->
+        <script th:src="@{/webjars/sweetalert2/11.4.24/dist/sweetalert2.min.js}"></script>
+
+        <script th:src="@{/public/js/public.js}"></script>
+        <script th:src="@{/public/js/join.js}"></script>
     </body>
 </html>

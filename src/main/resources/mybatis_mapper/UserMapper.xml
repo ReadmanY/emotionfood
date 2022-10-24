@@ -331,4 +331,12 @@
       </foreach>
   </delete>
 
+  <select id="selectByloginEmailAndPasswd" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+      FROM user
+        WHERE uemail = #{uemail} 
+        AND upw = #{upw}
+  </select>
+
 </mapper>
