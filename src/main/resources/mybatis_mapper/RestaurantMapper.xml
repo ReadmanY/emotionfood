@@ -53,7 +53,6 @@
     <result column="krate" jdbcType="REAL" property="krate" />
     <result column="kcount_rate" jdbcType="INTEGER" property="kcountRate" />
     <result column="kcount_blog" jdbcType="INTEGER" property="kcountBlog" />
-    <result column="kkeyword" jdbcType="VARCHAR" property="kkeyword" />
   </resultMap>
 
   <resultMap id="KakaoInfoResultMap" type="com.team.emofood.dto.KakaoInfo">
@@ -66,7 +65,6 @@
     <result column="krate" jdbcType="REAL" property="krate" />
     <result column="kcount_rate" jdbcType="INTEGER" property="kcountRate" />
     <result column="kcount_blog" jdbcType="INTEGER" property="kcountBlog" />
-    <result column="kkeyword" jdbcType="VARCHAR" property="kkeyword" />
   </resultMap>
 
   <sql id="Example_Where_Clause">
@@ -400,7 +398,7 @@
 
   <select id="findKakaoInfoRestaurantList" parameterType="Map" resultMap="RestaurantResultMap">
     SELECT r.rid, r.rname, r.rcate, r.raddr, r.raddr_gu, r.rphone, r.rlocate_x,  r.rlocate_y, 
-      k.kid, k.krate, k.kcount_rate, k.kcount_blog, k.kkeyword
+      k.kid, k.krate, k.kcount_rate, k.kcount_blog
     FROM emofood.restaurant r JOIN emofood.kakao_info k ON (r.kid = k.kid)
     WHERE 1=1
       <if test="rid!=null and rid!=''">
@@ -432,7 +430,7 @@
 
   <select id="selectKakaoInfoRestaurantByPrimaryKey" parameterType="java.lang.Integer" resultMap="RestaurantResultMap">
     SELECT r.rid, r.rname, r.rcate, r.raddr, r.raddr_gu, r.rphone, r.rlocate_x,  r.rlocate_y, 
-      k.kid, k.krate, k.kcount_rate, k.kcount_blog, k.kkeyword
+      k.kid, k.krate, k.kcount_rate, k.kcount_blog
     FROM emofood.restaurant r JOIN emofood.kakao_info k ON (r.kid = k.kid)
     where rid = #{rid,jdbcType=INTEGER}
   </select>

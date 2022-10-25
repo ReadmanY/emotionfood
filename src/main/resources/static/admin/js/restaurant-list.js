@@ -14,8 +14,7 @@ $(function () {
             { label: "rlocate_y", name: "rlocateY", index: "rlocateY", width: 120 },
             { label: "krate", name: "krate", index: "krate", width: 120 },
             { label: "kcount_rate", name: "kcountRate", index: "kcountRate", width: 120 },
-            { label: "kcount_blog", name: "kcountBlog", index: "kcountBlog", width: 120 },
-            { label: "kkeyword", name: "kkeyword", index: "kkeyword", width: 120 },
+            { label: "kcount_blog", name: "kcountBlog", index: "kcountBlog", width: 120 }
         ],
         height: 760,
         rowNum: 20,

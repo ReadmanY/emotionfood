@@ -14,7 +14,6 @@ CREATE TABLE KAKAO_INFO(
     krate FLOAT,
     kcount_rate INT,
     kcount_blog INT,
-    kkeyword VARCHAR(50),
 	CONSTRAINT PRIMARY KEY(kid)
 );
 
@@ -101,12 +100,11 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
-(@kid, @krate, @kcount_rate, @kcount_blog, @kkeyword)
+(@kid, @krate, @kcount_rate, @kcount_blog)
 set 카카오맵번호 = @kid,
     카카오평점 = @krate,
     카카오후기개수 = @kcount_rate,
     카카오블로그리뷰개수 = @kcount_blog
-    사업장명 = @kkeyword;
 
     
 LOAD DATA INFILE '/csvroot/food.csv'

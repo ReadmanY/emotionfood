@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class KakaoInfoRestaurantVO {
-    //kid, rid, rname, rcate, raddr, raddr_gu, rphone, rlocate_x, rlocate_y, krate, kcount_rate, kcount_blog, kkeyword
+    //kid, rid, rname, rcate, raddr, raddr_gu, rphone, rlocate_x, rlocate_y, krate, kcount_rate, kcount_blog
 
     /*
      * SELECT *
@@ -28,5 +28,4 @@ public class KakaoInfoRestaurantVO {
     private float krate;
     private int kcountRate;
     private int kcountBlog;
-    private String kkeyword;
 }
