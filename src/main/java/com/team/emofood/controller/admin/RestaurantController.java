@@ -69,7 +69,7 @@ public class RestaurantController {
     @RequestMapping(value = "/restaurants/update", method = RequestMethod.POST)
     @ResponseBody
     public Result update(@RequestBody Restaurant restaurant) {
-        if ( !Objects.isNull(restaurant.getRid())
+        if ( Objects.isNull(restaurant.getRid())
                 || !StringUtils.hasText(restaurant.getRname())
                 || !StringUtils.hasText(restaurant.getRcate())
                 || !StringUtils.hasText(restaurant.getRaddr())

@@ -22,48 +22,33 @@
                             <!-- /.Header -->
                             <div class="card-body">
                                 <form role="form" name="insertForm">
-                                    <div class="user_id form-group">
-                                        <label><input type="text" id="user_id" size="30" autofocus placeholder="이메일을 입력하세요" required disabled readonly th:value="${user.uemail}" /> </label>
+                                    <div class="rid d-none">
+                                        <label><input type="hidden" id="rid" required th:value="${restaurant.rid}" /> </label>
                                     </div>
-                                    <div class="user_name form-group">
-                                        <label><input type="text" id="user_name" size="30" placeholder="이름을 입력하세요" required th:value="${user.uname}" /> </label>
+                                    <div class="rname form-group">
+                                        <label><input type="text" id="rname" size="30" autofocus placeholder="식당명을 입력하세요" required th:value="${restaurant.rname}" /> </label>
                                     </div>
-                                    <div class="user_pw form-group">
-                                        <label><input type="password" id="user_pw" size="30" placeholder="비밀번호를 입력하세요" required th:value="${user.upw}" /> </label>
+                                    <div class="rcate form-group">
+                                        <label><input type="text" id="rcate" size="30" placeholder="카테고리를 입력하세요" required th:value="${restaurant.rcate}" /> </label>
                                     </div>
-                                    <!-- 관리자 -->
-                                    <th:block th:if="${user.uage}=='9'">
-                                        <div class="user_age d-none">
-                                            <label><input type="hidden" id="user_age" required th:value="${user.uage}" /> </label>
-                                        </div>
-                                        <div class="user_gender d-none">
-                                            <input type="radio" name="user_gender" id="manager" checked value="0" />
-                                        </div>
-                                    </th:block>
-                                    <!-- /.관리자 -->
-                                    <!-- 일반 사용자 -->
-                                    <th:block th:unless="${user.uage}=='9'">
-                                        <div class="user_age form-group">
-                                            <label for="age">연령대</label>
-                                            <select name="user_age" id="user_age" th:value="${user.uage}">
-                                                <option th:selected="${user.uage}=='10'" value="10">10대</option>
-                                                <option th:selected="${user.uage}=='20'" value="20">20대</option>
-                                                <option th:selected="${user.uage}=='30'" value="30">30대</option>
-                                                <option th:selected="${user.uage}=='40'" value="40">40대</option>
-                                                <option th:selected="${user.uage}=='50'" value="50">50대</option>
-                                                <option th:selected="${user.uage}=='60'" value="60">60대 이상</option>
-                                            </select>
-                                        </div>
-                                        <div class="user_gender form-group">
-                                            <input type="radio" name="user_gender" id="gendern" th:checked="${user.ugend}=='0'" value="0" />
-                                            <label for="user_gender">미선택</label>
-                                            <input type="radio" name="user_gender" id="genderm" th:checked="${user.ugend}=='1'" value="1" />
-                                            <label for="user_gender">남성</label>
-                                            <input type="radio" name="user_gender" id="genderf" th:checked="${user.ugend}=='2'" value="2" />
-                                            <label for="user_gender">여성</label>
-                                        </div>
-                                    </th:block>
-                                    <!-- /.일반 사용자 -->
+                                    <div class="raddr form-group">
+                                        <label><input type="text" id="raddr" size="30" placeholder="주소지를 입력하세요" required th:value="${restaurant.raddr}" /> </label>
+                                    </div>
+                                    <div class="raddr_gu form-group">
+                                        <label><input type="text" id="raddr_gu" size="30" placeholder="구 명을 입력하세요" required th:value="${restaurant.raddrGu}" /> </label>
+                                    </div>
+                                    <div class="rphone form-group">
+                                        <label><input type="text" id="rphone" size="30" placeholder="전화번호를 입력하세요" required th:value="${restaurant.rphone}" /> </label>
+                                    </div>
+                                    <div class="rlocate_x form-group">
+                                        <label><input type="text" id="rlocate_x" size="30" placeholder="경도를 입력하세요" required th:value="${restaurant.rlocateX}" /> </label>
+                                    </div>
+                                    <div class="rlocate_y form-group">
+                                        <label><input type="text" id="rlocate_y" size="30" placeholder="위도를 입력하세요" required th:value="${restaurant.rlocateY}" /> </label>
+                                    </div>
+                                    <div class="kid d-none">
+                                        <label><input type="hidden" id="kid" required th:value="${restaurant.kid}" /> </label>
+                                    </div>
                                 </form>
                                 <div>
                                     <button class="btn btn-info" onclick="submit()"><i class="fa-solid fa-check"></i> 수정하기</button>

@@ -32,7 +32,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public String updateRestaurant(Restaurant restaurant) {
-        Map<String, Object> temp = restaurantMapper.selectKakaoInfoRestaurantByPrimaryKey(restaurant.getRid());
+        Restaurant temp = restaurantMapper.selectByPrimaryKey(restaurant.getRid());
         if (temp == null) {
             return ServiceResultEnum.DATA_NOT_EXIST.getResult();
         }
