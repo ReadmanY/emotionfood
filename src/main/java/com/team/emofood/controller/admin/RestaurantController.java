@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.team.emofood.common.ServiceResultEnum;
+import com.team.emofood.controller.vo.KakaoInfoRestaurantVO;
 import com.team.emofood.dto.Restaurant;
 import com.team.emofood.service.RestaurantService;
 import com.team.emofood.util.PageQueryUtil;
@@ -58,7 +59,7 @@ public class RestaurantController {
     @GetMapping({"restaurants/edit/{restaurantId}"})
     public String edit(HttpServletRequest request, @PathVariable("restaurantId") Integer restaurantId) {
         request.setAttribute("path", "edit");
-        Restaurant restaurant = restaurantService.getRestaurantById(restaurantId);
+        KakaoInfoRestaurantVO restaurant = restaurantService.getRestaurantById(restaurantId);
         request.setAttribute("restaurant", restaurant);
         request.setAttribute("path", "restaurant-edit");
         return "admin/restaurant-list-edit";
@@ -97,7 +98,7 @@ public class RestaurantController {
     @GetMapping("/restaurants/info/{restaurantId}")
     public String info(HttpServletRequest request, @PathVariable("restaurantId") Integer restaurantId) {
         request.setAttribute("path", "info");
-        Restaurant restaurant = restaurantService.getRestaurantById(restaurantId);
+        KakaoInfoRestaurantVO restaurant = restaurantService.getRestaurantById(restaurantId);
         request.setAttribute("restaurant", restaurant);
         request.setAttribute("path", "restaurant-info");
         return "admin/restaurant-list-detail";

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
     <!-- 사용자목록 -->
-    <head th:replace="admin/header::head-fragment('식당 상세','user-list')"> </head>
+    <head th:replace="admin/header::head-fragment('식당 상세','restaurant-list')"> </head>
     <body>
         <div class="wrapper">
             <!-- Main Header Component -->
@@ -22,26 +22,21 @@
                             <!-- /.Header -->
                             <div class="card-body">
                                 <div class="grid-btn m-2">
-                                    <button class="btn btn-info" th:onclick="'location.href=\'' + @{/admin/users} + '\''"><i class="fa-solid fa-arrow-left"></i> 식당 목록</button>
+                                    <button class="btn btn-info" th:onclick="'location.href=\'' + @{/admin/restaurants} + '\''"><i class="fa-solid fa-arrow-left"></i> 식당 목록</button>
                                 </div>
                                 <div>
-                                    <p class="card-text">email: <span th:text="${user.uemail}"></span></p>
-                                    <p class="card-text">name: <span th:text="${user.uname}"></span></p>
-                                    <p class="card-text">password: <span th:text="${user.upw}"></span></p>
-
-                                    <p class="card-text">
-                                        gender: <span th:if="${user.ugend}=='0'">미선택</span>
-                                        <span th:if="${user.ugend}=='1'">남성</span>
-                                        <span th:if="${user.ugend}=='2'">여성</span>
-                                    </p>
-
-                                    <th:block th:if="${user.uage}=='9'">
-                                        <p class="card-text">role: 관리자</p>
-                                    </th:block>
-                                    <th:block th:unless="${user.uage}=='9'">
-                                        <p class="card-text">age: <span th:text="${user.uage}"></span>대</p>
-                                    </th:block>
-                                    <p class="card-text">join date: <span th:text="${user.ujoindate}"></span></p>
+                                    <p class="card-text">rid: <span th:text="${restaurant.rid}"></span></p>
+                                    <p class="card-text">rcate: <span th:text="${restaurant.rcate}"></span></p>
+                                    <p class="card-text">raddr: <span th:text="${restaurant.raddr}"></span></p>
+                                    <p class="card-text">raddr_gu: <span th:text="${restaurant.raddrGu}"></span></p>
+                                    <p class="card-text">rphone: <span th:text="${restaurant.rphone}"></span></p>
+                                    <p class="card-text">rlocate_x: <span th:text="${restaurant.rlocateX}"></span></p>
+                                    <p class="card-text">rlocate_y: <span th:text="${restaurant.rlocateY}"></span></p>
+                                    <p class="card-text">kid: <span th:text="${restaurant.kid}"></span></p>
+                                    <p class="card-text">krate: <span th:text="${restaurant.krate}"></span></p>
+                                    <p class="card-text">kcount_rate: <span th:text="${restaurant.kcountRate}"></span></p>
+                                    <p class="card-text">kcount_blog: <span th:text="${restaurant.kcountBlog}"></span></p>
+                                    <p class="card-text">kkeyword: <span th:text="${restaurant.kkeyword}"></span></p>
                                 </div>
                             </div>
                         </div>

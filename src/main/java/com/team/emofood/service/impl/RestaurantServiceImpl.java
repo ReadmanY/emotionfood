@@ -1,12 +1,15 @@
 package com.team.emofood.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team.emofood.common.EmoExcption;
 import com.team.emofood.common.ServiceResultEnum;
+import com.team.emofood.controller.vo.KakaoInfoRestaurantVO;
 import com.team.emofood.dto.Restaurant;
 import com.team.emofood.mapper.RestaurantMapper;
 import com.team.emofood.service.RestaurantService;
@@ -29,7 +32,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public String updateRestaurant(Restaurant restaurant) {
-        Restaurant temp = restaurantMapper.selectByPrimaryKey(restaurant.getRid());
+        Map<String, Object> temp = restaurantMapper.selectKakaoInfoRestaurantByPrimaryKey(restaurant.getRid());
         if (temp == null) {
             return ServiceResultEnum.DATA_NOT_EXIST.getResult();
         }
@@ -40,12 +43,14 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public Restaurant getRestaurantById(Integer id) {
-        Restaurant Restaurant = restaurantMapper.selectByPrimaryKey(id);
-        if (Restaurant == null) {
+    public KakaoInfoRestaurantVO getRestaurantById(Integer id) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> restaurant = restaurantMapper.selectKakaoInfoRestaurantByPrimaryKey(id);
+        if (restaurant == null) {
             EmoExcption.fail(ServiceResultEnum.DATA_NOT_EXIST.getResult());
         }
-        return Restaurant;
+        KakaoInfoRestaurantVO kakaoInfoRestaurantVO=objectMapper.convertValue(restaurant, KakaoInfoRestaurantVO.class);
+        return kakaoInfoRestaurantVO;
     }
 
     @Override

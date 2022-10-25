@@ -19,10 +19,10 @@ public class KakaoInfoRestaurantVO {
 	private String rname;
 	private String rcate;
 	private String raddr;
-	private String raddr_gu;
+	private String raddrGu;
 	private String rphone;
-	private float rlocate_x;
-	private float rloacte_y;
+	private float rlocateX;
+	private float rlocateY;
 
     private int kid;
     private float krate;

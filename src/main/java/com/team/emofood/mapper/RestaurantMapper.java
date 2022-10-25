@@ -1,6 +1,7 @@
 package com.team.emofood.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -102,5 +103,7 @@ public interface RestaurantMapper {
     List<Restaurant> findKakaoInfoRestaurantList(PageQueryUtil pageUtil);
     int getTotalKakaoInfoRestaurant(PageQueryUtil pageUtil);
      // 일괄삭제
-     int deleteBatch(Long[] ids);
+    int deleteBatch(Long[] ids);
+
+    Map<String, Object> selectKakaoInfoRestaurantByPrimaryKey(Integer rid);
 }
